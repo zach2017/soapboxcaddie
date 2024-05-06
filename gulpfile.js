@@ -42,7 +42,7 @@ const destDir = "build";
 const stylePaths = [
   {
     dest: "assets/css/style.css",
-    src: "src/assets/scss/style.scss",
+    src: "src/assets/scss/style.css",
   },
   {
     dest: "assets/css/vendor.css",
@@ -126,6 +126,11 @@ gulp.task("styles", async function () {
     .pipe(server.stream());
 });
 
+gulp.task("copy-css", () => {
+  return gulp.src("src/**/*.css")
+    .pipe(gulp.dest(path.join(destDir, "css")));
+});
+
 /**
  * Build scripts
  */
@@ -202,6 +207,7 @@ gulp.task(
     "clear_build_dir",
     "assets",
     "styles",
+    "copy-css",
     "scripts",
     "html",
     function () {
@@ -247,6 +253,7 @@ gulp.task(
     "clear_build_dir",
     "assets",
     "styles",
+    "copy-css",
     "scripts",
     "html"
   )
