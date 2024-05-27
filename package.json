@@ -1,17 +1,17 @@
 {
-  "name": "starter",
-  "description": "Include Bootstrap CSS and JS via the jsDelivr CDN.",
+  "name": "react.dev",
   "version": "0.0.0",
-  "private": true,
-  "repository": "twbs/examples",
-  "license": "MIT",
-  "stackblitz": {
-    "startCommand": "npm start"
-  },
+  "main": "/src/index.js",
   "scripts": {
-    "start": "sirv --dev --no-clear --port 3000"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "sirv-cli": "^2.0.2"
-  }
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0"
+  },
+  "devDependencies": {}
 }
